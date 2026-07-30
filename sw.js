@@ -1,5 +1,5 @@
 /* Trening 2026 — service worker */
-const VER   = 'trening2026-v4';
+const VER   = 'trening2026-v7';
 const SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-512-maskable.png',
@@ -25,7 +25,6 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // App shell (same origin): cache-first, fall back to cached index.html for navigations
   if (url.origin === self.location.origin) {
     e.respondWith(
       caches.match(req).then((hit) => hit || fetch(req).then((resp) => {
@@ -37,7 +36,6 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Exercise animations from free-exercise-db (raw.githubusercontent): cache-first runtime cache
   if (url.hostname.indexOf('githubusercontent.com') !== -1) {
     e.respondWith(
       caches.match(req).then((hit) => hit || fetch(req).then((resp) => {
@@ -46,11 +44,10 @@ self.addEventListener('fetch', (e) => {
           caches.open(VER + '-media').then((c) => c.put(req, copy));
         }
         return resp;
-      }).catch(() => hit))
+      }))
     );
     return;
   }
 
-  // Everything else (MuscleWiki videos, Google links): network, fall back to cache if any
   e.respondWith(fetch(req).catch(() => caches.match(req)));
 });
