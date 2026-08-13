@@ -1,5 +1,5 @@
 /* Trening 2026 — service worker */
-const VER   = 'trening2026-v7';
+const VER   = 'trening2026-v8';
 const SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './icon-512-maskable.png',
