@@ -1,14 +1,15 @@
 {
   "name": "Trening 2026 — Tracker",
   "short_name": "Trening 2026",
-  "description": "Tracker treningowy: MYO-reps × Mentzner Heavy Duty, Dom + Siłownia, progres i animacje.",
+  "description": "Tracker treningowy: MYO-reps, Heavy Duty i Hybryda. Progres, animacje, offline.",
   "lang": "pl",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0A0D12",
-  "theme_color": "#0A0D12",
+  "background_color": "#F2EFE7",
+  "theme_color": "#F2EFE7",
+  "version": "1.5.0",
   "icons": [
     {
       "src": "./icon-192.png",
