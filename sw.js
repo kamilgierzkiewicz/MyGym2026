@@ -1,5 +1,5 @@
-/* Trening 2026 — service worker · app v1.5.2 */
-const VER   = 'trening2026-v11';
+/* Trening 2026 — service worker · app v1.6.0 */
+const VER   = 'trening2026-v12';
 const SHELL = ['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png',
   './icon-512-maskable.png','./apple-touch-icon.png','./favicon-32.png'];
 
